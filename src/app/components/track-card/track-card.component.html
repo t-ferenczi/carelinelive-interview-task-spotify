@@ -1,0 +1,9 @@
+<mat-card>
+    <mat-card-header>
+        <img matCardAvatar [src]="track.album.image?.url" [alt]="track.album.name">
+        <mat-card-title>{{ track.name }}</mat-card-title>
+        <mat-card-subtitle>
+            {{ track.artists[0] }}
+        </mat-card-subtitle>
+    </mat-card-header>
+</mat-card>
