@@ -1,4 +1,4 @@
-import { AudioFeatures } from './audio-features';
+import {AudioFeatures, numerableFeature, numerableFeatureProperty, numerableTrackProperty} from './audio-features';
 import { Image, SpotifyPlaylist } from './spotify-playlist';
 
 export interface SimplePlaylist {
@@ -61,4 +61,14 @@ export function createSimplePlaylist(playlist: SpotifyPlaylist, features: AudioF
             })),
         },
     };
+}
+
+export function getTrackFeature(track: SimpleTrack, property: numerableFeature): number {
+    if (property in track) {
+        return track[property as numerableTrackProperty];
+    } else if (track.features && property in track.features) {
+        return track.features[property as numerableFeatureProperty];
+    } else {
+        return 0;
+    }
 }

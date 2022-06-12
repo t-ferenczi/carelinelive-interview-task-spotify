@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SimpleTrack} from '../../services/spotify/models/simple-playlist';
+import {getTrackFeature, SimpleTrack} from '../../services/spotify/models/simple-playlist';
 import {featureScale, numerableFeature} from "../../services/spotify/models/audio-features";
 
 @Component({
@@ -16,7 +16,7 @@ export class TrackCardComponent implements OnInit {
 
         if (this.track.features && this.highlightFeature) {
             let total = (featureScale[this.highlightFeature]['max'] - featureScale[this.highlightFeature]['min']);
-            let partial = this.track.features[this.highlightFeature];
+            let partial = getTrackFeature(this.track, this.highlightFeature);
             if (featureScale[this.highlightFeature].negative) {
                 // hack to do the maths right for the loudness feature
                 partial = partial + total;

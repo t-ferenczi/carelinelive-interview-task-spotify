@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SimpleTrack} from "../../services/spotify/models/simple-playlist";
+import {getTrackFeature, SimpleTrack} from "../../services/spotify/models/simple-playlist";
 import {numerableFeature} from "../../services/spotify/models/audio-features";
 
 @Component({
@@ -20,14 +20,10 @@ export class TopTrackComponent implements OnInit {
     ngOnInit(): void {
         this.topTrack = this.tracks.reduce((top, current) => {
             // finding the track with the minimum or maximum value of the selected feature
-            if (current.features && top.features) {
-                if (
-                    (this.minMax === 'max' && top.features[this.feature] < current.features[this.feature])
-                    || (this.minMax === 'min' && top.features[this.feature] > current.features[this.feature])) {
-                    return current;
-                } else {
-                    return top;
-                }
+            if (
+                (this.minMax === 'max' && getTrackFeature(top, this.feature) < getTrackFeature(current, this.feature))
+                || (this.minMax === 'min' && getTrackFeature(top, this.feature) > getTrackFeature(current, this.feature))) {
+                return current;
             } else {
                 return top;
             }

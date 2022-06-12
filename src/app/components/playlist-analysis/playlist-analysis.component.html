@@ -1,4 +1,9 @@
 <p>
+    Most popular track:
+    <app-top-track [tracks]="playlist.tracks.items" [feature]="'popularity'" [minMax]="'max'"></app-top-track>
+</p>
+
+<p>
     Loudest track:
     <app-top-track [tracks]="playlist.tracks.items" [feature]="'loudness'" [minMax]="'max'"></app-top-track>
 </p>

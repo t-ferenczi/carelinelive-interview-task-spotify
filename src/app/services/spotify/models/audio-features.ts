@@ -24,15 +24,23 @@ export interface AudioFeatures {
     time_signature: number;
 }
 
-export type numerableFeature = 'danceability' | 'energy' | 'loudness' | 'valence';
+// some of the track numeric properties that can be displayed as a comparable value
+export type numerableTrackProperty = 'popularity';
+export type numerableFeatureProperty = 'danceability' | 'energy' | 'loudness' | 'valence';
+// consists of two types that are used as typeguards for different levels of the track object
+export type numerableFeature = numerableTrackProperty | numerableFeatureProperty;
 
-type featureScaleValues = {
+type scaleValues = {
     min: number,
     max: number,
     negative?: boolean,
 };
 
-export const featureScale: Record<numerableFeature, featureScaleValues> = {
+export const featureScale: Record<numerableFeature, scaleValues> = {
+    popularity: {
+        min: 0,
+        max: 100,
+    },
     danceability: {
         min: 0,
         max: 1,
