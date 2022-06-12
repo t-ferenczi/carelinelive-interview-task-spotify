@@ -1,3 +1,13 @@
 :host {
     display: block;
 }
+meter {
+    height: 20px;
+
+}
+.mat-card-content {
+    font-size: 12px;
+    display: flex;
+    justify-content: end;
+    column-gap: 10px;
+}

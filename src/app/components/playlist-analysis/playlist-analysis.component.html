@@ -1,3 +1,24 @@
+<p>
+    Loudest track:
+    <app-top-track [tracks]="playlist.tracks.items" [feature]="'loudness'" [minMax]="'max'"></app-top-track>
+</p>
+
+<p>
+    Quietest track:
+    <app-top-track [tracks]="playlist.tracks.items" [feature]="'loudness'" [minMax]="'min'"></app-top-track>
+</p>
+
+<p>
+    Most positive track:
+    <app-top-track [tracks]="playlist.tracks.items" [feature]="'valence'" [minMax]="'max'"></app-top-track>
+</p>
+
+<p>
+    Most energetic track:
+    <app-top-track [tracks]="playlist.tracks.items" [feature]="'energy'" [minMax]="'max'"></app-top-track>
+</p>
+
+
 <p>Ideas:</p>
 
 <ul>
