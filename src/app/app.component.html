@@ -9,6 +9,10 @@
         </div>
 
         <div class="search-box">
+            <div class="search-text">
+                <input #searchText placeholder="Search for playlist" value="test">
+                <button mat-stroked-button (click)="onSearch(searchText.value)">Search</button>
+            </div>
             <mat-selection-list [multiple]="false">
                 <mat-list-option *ngFor="let list of search$ | async" [value]="list.id" (click)="loadPlaylist(list.id)">
                     {{ list.name }}

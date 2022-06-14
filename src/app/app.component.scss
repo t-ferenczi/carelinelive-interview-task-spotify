@@ -39,6 +39,16 @@
             }
 
             .search-box {
+
+                .search-text {
+                    display: flex;
+
+                    input {
+                        flex-grow: 1;
+                        border: 1px solid rgba(0,0,0,.12);
+                    }
+                }
+
                 .mat-selection-list {
                     width: 300px;
                     max-height: 100%;

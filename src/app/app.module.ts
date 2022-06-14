@@ -10,6 +10,7 @@ import { PlaylistAnalysisComponent } from './components/playlist-analysis/playli
 import { TrackCardComponent } from './components/track-card/track-card.component';
 import { TopTrackComponent } from './components/top-track/top-track.component';
 import {MatListModule} from "@angular/material/list";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
     declarations: [
@@ -25,6 +26,7 @@ import {MatListModule} from "@angular/material/list";
         HttpClientModule,
         MatCardModule,
         MatListModule,
+        MatButtonModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
