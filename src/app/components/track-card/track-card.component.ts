@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 import {getTrackFeature, SimpleTrack} from '../../services/spotify/models/simple-playlist';
 import {featureScale, numerableFeature} from "../../services/spotify/models/audio-features";
 
@@ -7,13 +7,12 @@ import {featureScale, numerableFeature} from "../../services/spotify/models/audi
     templateUrl: './track-card.component.html',
     styleUrls: ['./track-card.component.scss']
 })
-export class TrackCardComponent implements OnInit {
+export class TrackCardComponent implements OnChanges {
     @Input() track!: SimpleTrack;
     @Input() highlightFeature?: numerableFeature;
     normalizedFeature?: number;
 
-    ngOnInit() {
-
+    ngOnChanges() {
         if (this.highlightFeature) {
             let total = (featureScale[this.highlightFeature]['max'] - featureScale[this.highlightFeature]['min']);
             let partial = getTrackFeature(this.track, this.highlightFeature);

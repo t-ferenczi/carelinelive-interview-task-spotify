@@ -21,17 +21,7 @@
         </div>
     </header>
 
-    <aside class="playlist-col">
-        <h2>Tracks</h2>
-        <p>{{ playlist.tracks.total }} tracks</p>
-
-        <div class="playlist-col-content playlist-tracks">
-            <app-track-card *ngFor="let track of playlist.tracks.items"
-                            [track]="track"
-                            [highlightFeature]="'popularity'">
-            </app-track-card>
-        </div>
-    </aside>
+    <app-track-list [playlist]="playlist"></app-track-list>
 
     <article class="playlist-col">
 

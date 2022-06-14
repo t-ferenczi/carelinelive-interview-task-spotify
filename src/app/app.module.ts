@@ -11,6 +11,8 @@ import { TrackCardComponent } from './components/track-card/track-card.component
 import { TopTrackComponent } from './components/top-track/top-track.component';
 import {MatListModule} from "@angular/material/list";
 import {MatButtonModule} from "@angular/material/button";
+import {FormsModule} from "@angular/forms";
+import { TrackListComponent } from './components/track-list/track-list.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +20,7 @@ import {MatButtonModule} from "@angular/material/button";
         TrackCardComponent,
         PlaylistAnalysisComponent,
         TopTrackComponent,
+        TrackListComponent,
     ],
     imports: [
         BrowserModule,
@@ -27,6 +30,7 @@ import {MatButtonModule} from "@angular/material/button";
         MatCardModule,
         MatListModule,
         MatButtonModule,
+        FormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

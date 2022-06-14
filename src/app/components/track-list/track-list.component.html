@@ -1,0 +1,18 @@
+<aside class="playlist-col">
+    <h2>Tracks</h2>
+    <div class="tracks-header">
+        <span>{{ playlist.tracks.total }} tracks</span>
+        <div>
+            sort by
+            <select [(ngModel)]="sortBy" (change)="sortTracks()">
+                <option *ngFor="let sortKey of sortOptions" [value]="sortKey">{{sortKey}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="playlist-col-content playlist-tracks">
+        <app-track-card *ngFor="let track of playlist.tracks.items"
+                        [track]="track"
+                        [highlightFeature]="sortBy">
+        </app-track-card>
+    </div>
+</aside>
