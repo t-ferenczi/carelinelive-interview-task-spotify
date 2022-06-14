@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SimplePlaylist } from '../../services/spotify/models/simple-playlist';
 
 @Component({
@@ -6,7 +6,7 @@ import { SimplePlaylist } from '../../services/spotify/models/simple-playlist';
     templateUrl: './playlist-analysis.component.html',
     styleUrls: ['./playlist-analysis.component.scss']
 })
-export class PlaylistAnalysisComponent implements OnInit {
+export class PlaylistAnalysisComponent {
     private _playlist!: SimplePlaylist;
 
     @Input() set playlist(value: SimplePlaylist) {
@@ -15,11 +15,5 @@ export class PlaylistAnalysisComponent implements OnInit {
 
     get playlist(): SimplePlaylist {
         return this._playlist;
-    }
-
-    constructor() {
-    }
-
-    ngOnInit(): void {
     }
 }

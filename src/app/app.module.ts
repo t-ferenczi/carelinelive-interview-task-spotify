@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 import { PlaylistAnalysisComponent } from './components/playlist-analysis/playlist-analysis.component';
 import { TrackCardComponent } from './components/track-card/track-card.component';
 import { TopTrackComponent } from './components/top-track/top-track.component';
-import {MatListModule} from "@angular/material/list";
-import {MatButtonModule} from "@angular/material/button";
-import {FormsModule} from "@angular/forms";
+import { MatListModule } from "@angular/material/list";
+import { MatButtonModule } from "@angular/material/button";
+import { FormsModule } from "@angular/forms";
 import { TrackListComponent } from './components/track-list/track-list.component';
 
 @NgModule({
