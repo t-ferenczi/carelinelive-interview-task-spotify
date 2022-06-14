@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { PlaylistAnalysisComponent } from './components/playlist-analysis/playlist-analysis.component';
 import { TrackCardComponent } from './components/track-card/track-card.component';
 import { TopTrackComponent } from './components/top-track/top-track.component';
+import {MatListModule} from "@angular/material/list";
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { TopTrackComponent } from './components/top-track/top-track.component';
         AppRoutingModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        MatCardModule
+        MatCardModule,
+        MatListModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

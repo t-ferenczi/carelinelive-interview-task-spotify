@@ -35,6 +35,15 @@
 
             .playlist-details {
                 padding: 24px;
+                flex-grow: 1;
+            }
+
+            .search-box {
+                .mat-selection-list {
+                    width: 300px;
+                    max-height: 100%;
+                    overflow-y: scroll;
+                }
             }
         }
 
