@@ -14,7 +14,7 @@ export class TrackCardComponent implements OnInit {
 
     ngOnInit() {
 
-        if (this.track.features && this.highlightFeature) {
+        if (this.highlightFeature) {
             let total = (featureScale[this.highlightFeature]['max'] - featureScale[this.highlightFeature]['min']);
             let partial = getTrackFeature(this.track, this.highlightFeature);
             if (featureScale[this.highlightFeature].negative) {

@@ -6,7 +6,7 @@
             {{ track.artists[0] }}
         </mat-card-subtitle>
     </mat-card-header>
-    <mat-card-content *ngIf="highlightFeature && track.features">
+    <mat-card-content *ngIf="highlightFeature">
         <span>{{ highlightFeature }}: {{ normalizedFeature }}%</span>
         <meter [min]="0" [max]="100" [value]="normalizedFeature"
         ></meter>

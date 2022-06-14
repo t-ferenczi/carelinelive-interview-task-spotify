@@ -45,7 +45,7 @@ export function createSimplePlaylist(playlist: SpotifyPlaylist, features: AudioF
         },
         tracks: {
             total: playlist.tracks.total,
-            items: playlist.tracks.items.map(item => ({
+            items: playlist.tracks.items.filter(item => item?.track).map(item => ({
                 id: item.track.id,
                 album: {
                     id: item.track.album.id,
@@ -57,7 +57,7 @@ export function createSimplePlaylist(playlist: SpotifyPlaylist, features: AudioF
                 duration_ms: item.track.duration_ms,
                 name: item.track.name,
                 popularity: item.track.popularity,
-                features: features.find(feature => feature.id === item.track.id)
+                features: features.find(feature => feature?.id === item.track.id)
             })),
         },
     };

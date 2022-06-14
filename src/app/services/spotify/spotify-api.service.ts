@@ -73,7 +73,7 @@ export class SpotifyApiService {
                 );
             }),
             switchMap(playlist => {
-                const ids = playlist.tracks.items.map(track => track.track.id);
+                const ids = playlist.tracks.items.filter(track => track.track).map(track => track.track.id);
 
                 return this.trackAudioFeatures(ids, token).pipe(
                     map((features) => createSimplePlaylist(playlist, features))
